@@ -1,1 +1,77 @@
 
+/* Perfume Quiz – Admin & Shared CSS (RTL-friendly) */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+:root{
+  --pq-border:#e5e7eb;
+  --pq-muted:#6b7280;
+  --pq-bg:#ffffff;
+  --pq-soft:#f9fafb;
+  --pq-primary:#2563eb;
+  --pq-danger:#ef4444;
+  --pq-green:#059669;
+}
+
+.pq-admin, .pq-admin * { font-family: "Vazirmatn", sans-serif; }
+
+/* Cards */
+.pq-card{
+  background:var(--pq-bg);
+  border:1px solid var(--pq-border);
+  border-radius:12px;
+  padding:20px;
+  margin:16px 0;
+}
+.pq-cards{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+}
+
+.pq-h1{ font-weight:700; font-size:22px; margin:10px 0 12px; }
+.pq-h2{ font-weight:700; font-size:18px; margin:6px 0 10px; }
+.pq-hint{ color:var(--pq-muted); }
+
+/* Lists and stats */
+.pq-list{ list-style:none; margin:0; padding:0; }
+.pq-list li{ padding:10px 0; border-bottom:1px dashed var(--pq-border); }
+.pq-stat{ font-weight:700; font-size:28px; }
+
+/* Buttons */
+.button.button-danger{ background: var(--pq-danger); border-color: var(--pq-danger); color:#fff; }
+.button.button-danger:hover{ filter:brightness(0.98); }
+.button.button-primary{ background: var(--pq-primary); border-color: var(--pq-primary); color:#fff; }
+
+/* Copyable code */
+.pq-copyable{ cursor:copy; user-select:all; }
+.pq-badge{ background:#1f2937; color:#fff; border-radius:999px; padding:2px 8px; font-size:12px; }
+
+/* Forms */
+.pq-form .form-table th{ width:220px; }
+.pq-form input[type="text"],
+.pq-form input[type="number"],
+.pq-form input[type="email"],
+.pq-form input[type="tel"],
+.pq-form textarea,
+.pq-form select{ width:100%; max-width:560px; }
+.pq-form .description{ color:var(--pq-muted); }
+
+/* Tables */
+.widefat.fixed.striped{ border:1px solid var(--pq-border); border-radius:10px; overflow:hidden; }
+.widefat thead th{ background:var(--pq-soft); }
+.widefat td, .widefat th{ vertical-align:top; }
+
+/* Modal */
+.pq-modal{ position:fixed; inset:0; background:rgba(0,0,0,.35); display:flex; align-items:center; justify-content:center; z-index:999999; }
+.pq-modal[hidden]{ display:none; }
+.pq-modal-content{ background:#fff; border-radius:12px; padding:22px; width:min(520px,94vw); box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+.pq-modal-actions{ display:flex; gap:10px; justify-content:flex-end; margin-top:14px; }
+
+/* Grid/spacing tweaks for mobile-first */
+@media (max-width: 782px){
+  .pq-form .form-table th{ width:auto; }
+  .pq-card{ padding:16px; }
+  .pq-cards{ grid-template-columns: 1fr; }
+}
+
+/* Admin results table small cells */
+td .pq-badge{ background:#ef4444; }
